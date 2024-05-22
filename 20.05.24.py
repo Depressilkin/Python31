@@ -127,32 +127,21 @@ print(stack)
 #
 # полиморфизм
 # I перегруженный метод с разным типом данных
-class Auto:
-    def __init__(self,maker,model):
-        self.maker = maker
-        self.model = model
-
-    def get_model(self):
-        return self.model
-    def __str__(self):
-
-        return f'Auto {self.maker}, {self.model}'
-bmw = Auto('BMW','X4')
-print(bmw)
-
+#class Auto:
+#    def __init__(self,maker,model):
+#        self.maker = maker
+#        self.model = model
+#
+#    def get_model(self):
+#        return self.model
+#    def __str__(self):
+#
+#        return f'Auto {self.maker}, {self.model}'
+#bmw = Auto('BMW','X4')
+#print(bmw)
+#
 #II перегруженный метод c разным количеством агрументов
-class Figure:
-    def __init__(self, a=None, b=None, c=None, d=None):
-        if a != None and b != None and c != None and d != None:
-            print('Вывод 4угольника abcd')
-        elif a != None and b != None and c != None:
-            print('Вывод 3угольника abc')
-        elif a != None and b != None:
-            print('Вывод отрезка')
-        else:
-            print('вывод с 1 или 0 аргументов')
-    def f(*arg):
-        pass
-obj1 = Figure()
-obj2 = Figure(2,3,4)
-obj3 = Figure(3,4,5,6)
+#
+#Субклассы
+#@staticmethod
+
