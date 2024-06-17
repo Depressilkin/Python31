@@ -102,14 +102,3 @@
 #    
 #cat = Cat('muw-', 'Tom')
 #print(cat.get_sound(), cat.get_type())
-
-
-
-def f(fu):
-    return fu()
-@f
-def f2():
-    return 'inf'
-
-a = f2
-print(a)
