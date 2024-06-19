@@ -124,32 +124,35 @@
 #print(my_queue.isEmpty())
 #print(my_queue.isFull())
 #task 2
-class PriorityQueue:
-    def __init__(self):
-        self.queue = []
-    
-    def insert_with_priority(self, element, priority):
-        self.queue.append([element, priority])
-        self.queue.sort(reverse=True, key= lambda x: x[1])
-        return self.queue
-    
-    def show(self):
-        return self.queue
-    
-    def pull_hightes_priority_element(self):
-        if self.queue:
-            self.queue.pop(0)
-            return self.queue
-        else:
-            return 'Очередь пустая'
-    
-    def peek(self):
-        return self.queue[0]
-    
-my_prior_queue = PriorityQueue()
-my_prior_queue.insert_with_priority(1, 0.5)
-my_prior_queue.insert_with_priority(3, 0.7)
-my_prior_queue.insert_with_priority(4, 0.2)
-my_prior_queue.pull_hightes_priority_element()
-print(my_prior_queue.peek())
-print(my_prior_queue.show())
+#class PriorityQueue:
+#    def __init__(self):
+#        self.queue = []
+#    
+#    def insert_with_priority(self, element, priority):
+#        self.queue.append([element, priority])
+#        self.queue.sort(reverse=True, key= lambda x: x[1])
+#        return self.queue
+#    
+#    def show(self):
+#        return self.queue
+#    
+#    def pull_hightes_priority_element(self):
+#        if self.queue:
+#            self.queue.pop(0)
+#            return self.queue
+#        else:
+#            return 'Очередь пустая'
+#    
+#    def peek(self):
+#        return self.queue[0]
+#    
+#my_prior_queue = PriorityQueue()
+#my_prior_queue.insert_with_priority(1, 0.5)
+#my_prior_queue.insert_with_priority(3, 0.7)
+#my_prior_queue.insert_with_priority(4, 0.2)
+#my_prior_queue.pull_hightes_priority_element()
+#print(my_prior_queue.peek())
+#print(my_prior_queue.show())
+c = [1,2,3,4,4]
+*d ,= c[0], c[2]
+print(d)
