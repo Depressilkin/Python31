@@ -130,27 +130,95 @@
 #d = {**a, **b}
 #print(c, d)
 #task 1
-class CountryCapital:
-    def __init__(self):
-        self.coun_cap={}
-    def app(self,country,capital):
-        self.coun_cap[country] = capital
-        return self.coun_cap
-    def desplay(self) -> str:
-        return self.coun_cap
-    def __str__(self) -> str:
-        line_print = ''
-        for i in self.coun_cap.items():
-            line_print += ': '.join(i) + ' '
-        return line_print
-    def del_country(self,country):
-        del self.coun_cap[country]
-
-
-euro = CountryCapital()
-euro.app('Россия', "Москва")
-euro.app('КНР', "Пекин")
-print(euro.desplay())
-print(euro)
-euro.del_country('КНР')
-print(euro)
+#class CountryCapital:
+#    def __init__(self):
+#        self.coun_cap={}
+#    def app_or_change(self,country,capital):
+#        self.coun_cap[country] = capital
+#        return self.coun_cap
+#    def desplay(self) -> str:
+#        return self.coun_cap
+#    def __str__(self) -> str:
+#        line_print = ''
+#        for i in self.coun_cap.items():
+#            line_print += ': '.join(i) + ' '
+#        return line_print
+#    def del_country(self,country):
+#        del self.coun_cap[country]
+#    
+#    def found_country(self, country):
+#        if country in self.coun_cap.keys():
+#            return True
+#        else:
+#            return False
+#    
+#    def found_capital(self, country):
+#        if country in self.coun_cap.values():
+#            return True
+#        else:
+#            return False
+#    
+#    def app_massiv(self, *country_capital):
+#        for index in range(0,len(country_capital),2):
+#            self.coun_cap[country_capital[index]] = country_capital[index + 1]
+#        return self.coun_cap
+#
+## C:\Users\3\Python31\19-06-24.py
+#    def save_as_text(self, path, file_name):
+#        with open(f'{path}/{file_name}','w') as f:
+#            base_date = f
+#            print(self.coun_cap.items()) 
+#            for item in self.coun_cap.items():
+#                item = ' - '.join(item)
+#                base_date.write(item+'\n')
+#
+#euro = CountryCapital()
+#euro.app_or_change('Россия', "Москва")
+#euro.app_or_change('КНР', "Пекин")
+#print(euro.desplay())
+#print(euro)
+#euro.del_country('КНР')
+#print(euro)
+#print(euro.found_country('Россия'))
+#print(euro.found_capital('Москва'))
+#print(euro.app_massiv('England', 'London', 'France', 'Paris', 'Германия', 'Берлин'))
+#euro.save_as_text('C:/Users/3/Python31', 'CountryCapital.txt')
+class Songs:
+  def __init__(self):
+    self.songsTable = {}
+    
+  def add_autor(self, autor, *album):
+    self.songsTable[autor] = [*album]
+    return self.songsTable
+    
+  def add_album(self, album, autor):
+    self.songsTable[autor].append(album)
+    return self.songsTable
+  def del_autor(self, autor):
+    if autor in self.songsTable:
+      del self.songsTable[autor]
+      return self.songsTable
+    else:
+      return 'Автор не найден'
+    
+  def del_album(self, autor, album):
+    if autor in self.songsTable:
+      self.songsTable[autor].remove(album)
+      return self.songsTable
+    else:
+      print('Автор не найден')
+  def change_album(self, autor, old_album, new_album):
+    if old_album in self.songsTable[autor]:
+      self.songsTable[autor][self.songsTable[autor].index(old_album)] = new_album
+      return self.songsTable
+        #альтернативно
+        #self.songsTable[autor][self.songaTable[autor].index(old_album)] = new_albom
+    else:
+      return 'Альбом не найден'
+obj1 = Songs()
+obj1.add_autor('Автор1','Первый', 'Второй')
+print(obj1.__dict__)
+print(obj1.add_album('Alb3','Автор1'))
+obj1.add_autor('Автор2','Первый', 'Второй')
+print(obj1.del_album('Автор1','Второй'))
+print(obj1.change_album('Автор1', 'Alb3', 'Alb5'))
