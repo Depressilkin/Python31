@@ -153,6 +153,3 @@
 #my_prior_queue.pull_hightes_priority_element()
 #print(my_prior_queue.peek())
 #print(my_prior_queue.show())
-c = [1,2,3,4,4]
-*d ,= c[0], c[2]
-print(d)

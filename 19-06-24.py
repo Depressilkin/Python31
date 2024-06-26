@@ -183,6 +183,7 @@
 #print(euro.found_capital('Москва'))
 #print(euro.app_massiv('England', 'London', 'France', 'Paris', 'Германия', 'Берлин'))
 #euro.save_as_text('C:/Users/3/Python31', 'CountryCapital.txt')
+#TASK 2
 class Songs:
   def __init__(self):
     self.songsTable = {}
@@ -215,10 +216,40 @@ class Songs:
         #self.songsTable[autor][self.songaTable[autor].index(old_album)] = new_albom
     else:
       return 'Альбом не найден'
-obj1 = Songs()
-obj1.add_autor('Автор1','Первый', 'Второй')
-print(obj1.__dict__)
-print(obj1.add_album('Alb3','Автор1'))
-obj1.add_autor('Автор2','Первый', 'Второй')
-print(obj1.del_album('Автор1','Второй'))
-print(obj1.change_album('Автор1', 'Alb3', 'Alb5'))
+    
+  def add_array_album(self, autor,*album):
+    if autor in self.songsTable:
+      for item in album:
+        self.songsTable[autor].append(item)
+      return self.songsTable
+    else:
+      return 'Автор не найден'
+  
+  def save_file(self, path):
+    with open(path, 'w') as file:
+      for item in self.songsTable.items():
+        file.write(item[0] + ' ' + str(item[1])[1:-1] + '\n')
+  
+  def load_file(self, path):
+    with open(path, 'r') as file:
+      for item in file :
+        index_autor = item.find("'")
+        autor = item [0:index_autor-1]
+        item =item.replace("'","")
+        list_album =list(item[index_autor:].split(', '))
+        self.songsTable[autor] = list_album
+        self.songsTable[autor][-1] = self.songsTable[autor][-1][:-1]
+    return self.songsTable
+
+#C:/Users/3/Python31/MusicBase.txt    
+#obj1 = Songs()
+#obj1.add_autor('Автор1','Первый', 'Второй')
+#print(obj1.__dict__)
+#print(obj1.add_album('Alb3','Автор1'))
+#obj1.add_autor('Автор2','Первый', 'Второй')
+#print(obj1.del_album('Автор1','Второй'))
+#print(obj1.change_album('Автор1', 'Alb3', 'Alb5'))
+#print(obj1.add_array_album('Автор1','5','seven','8'))
+#obj1.save_file('C:/Users/3/Python31/MusicBase.txt')
+#obj2 = Songs()
+#print(obj2.load_file('C:/Users/3/Python31/MusicBase.txt '))
