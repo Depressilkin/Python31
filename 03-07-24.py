@@ -136,7 +136,3 @@ group = [
 
 ip3 = Group(group)
 print(ip3.students)
-
-for student in ip3: 
-    student['Leon'][1] = 4.9
-print(ip3.students) 
