@@ -1,9 +1,11 @@
-23
-43
-56
-786
-26
-38
-16
-Minimize: 16
- Maximize: 786
+#second_expl.color = 'black'
+#print(second_expl.color)
+#print(first_expl, first_expl.__init__)
+#class Cats:
+#    def __init__(self):
+#        self.name = input('Введите имя котёнка')
+#        self.age = input('Введите возраст')
+#my_cat = Cats()
+#print(my_cat.name)
+#print(Cats.__dict__)
+#class Person:
