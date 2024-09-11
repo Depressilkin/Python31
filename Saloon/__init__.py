@@ -1,5 +1,5 @@
 import sqlite3 as sq
-with sq.connect('C:/Users/Преподаватель/Documents/python31/Python31/09-09-/DataBase.db') as con:
+with sq.connect('C:/Users/Преподаватель/Documents/python31/Python31/Saloon/DataBase.db') as con:
     cur = con.cursor()
     cur.execute('''
 CREATE TABLE IF NOT EXISTS products(

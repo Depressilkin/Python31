@@ -22,7 +22,6 @@ class MastersList:
                 self.list.pop(self.list.index(master))
                 # TODO вызов функции удаления мастрера из БД
                 del master
-    
 # TEST
 #master1 = Master('Katy', '43566')
 #master2 = Master('Mo','4535644')
@@ -81,8 +80,8 @@ class Service:
         self.master = master
         self.price = price
         self.amount = price - client.discount * price
-        self.salary = self.amount / 3
-        self. profit = self.amount - self.salary
+        self.salary = self.amount / 2
+        self. profit = self.salary
     
     def get_info(self):
         return f'{self.__dict__}'
@@ -93,15 +92,6 @@ class ServicesList:
     def add_service(self,service):
         self.list.append(service)
     
-    def delete_service(self, id_service):
-        for service in self.list:
-            if id_service == service.id:
-                self.list.pop(self.list.index(service))
-                # TODO добавить функцию удаления продукта из БД
-                del service
-     
-product_list = ProductsList()
-for i in range(4):
-    list = ['стрижка', "маникюр", "покраска", "педикюр"]
-    product = Product(list[i])
-    product_list.add_product(product)
+    def delete_product(self, id_product):
+        for product in self.list:
+            # TODO ПРОПИСАТЬ УДАЛЕНИЯ СЕРВИСА 
